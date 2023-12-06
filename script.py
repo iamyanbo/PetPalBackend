@@ -15,9 +15,9 @@ def create_initial_data_json():
     print("Creating initial_data.json...")
     """Create initial_data json file for testing."""
     # Users
-    seeker1 = User.objects.create_user(email="seeker1@example.com", password="123", role=User.Role.SEEKER)
-    seeker2 = User.objects.create_user(email="seeker2@example.com", password="123", role=User.Role.SEEKER)
-    seeker3 = User.objects.create_user(email="seeker3@example.com", password="123", role=User.Role.SEEKER)
+    seeker1 = User.objects.create_user(email="seeker1@example.com", password="123", role=User.Role.SEEKER, first_name="Bob", last_name="Smith")
+    seeker2 = User.objects.create_user(email="seeker2@example.com", password="123", role=User.Role.SEEKER, first_name="Dan", last_name="Smith")
+    seeker3 = User.objects.create_user(email="seeker3@example.com", password="123", role=User.Role.SEEKER, first_name="Alice", last_name="Smith")
     shelter1 = User.objects.create_user(email="shelter1@example.com", password="123", first_name="shelter 1", role=User.Role.SHELTER)
     shelter2 = User.objects.create_user(email="shelter2@example.com", password="123", first_name="shelter 2", role=User.Role.SHELTER)
     shelter3 = User.objects.create_user(email="shelter3@example.com", password="123", first_name="shelter 3", role=User.Role.SHELTER)
@@ -46,13 +46,13 @@ def create_initial_data_json():
                                             special_needs="", description="A very cute dog.", owner=shelter1)
     
     # Applications
-    app1 = Application.objects.create(first_name="John", last_name="Doe", address="123 Main St", phone="123-456-7890",
+    app1 = Application.objects.create(first_name="Bob", last_name="Smith", address="123 Main St", phone="123-456-7890",
                                       email="seeker1@example.com", contact_pref="E", pet_number=1, has_children=False,
                                       experience="EX", residence_type="C", status="P", seeker=seeker1, shelter=shelter1, petlisting=petlisting1)
-    app2 = Application.objects.create(first_name="John", last_name="Doe", address="123 Main St", phone="123-456-7890",
-                                      email="seeker1@example.com", contact_pref="E", pet_number=1, has_children=False,
+    app2 = Application.objects.create(first_name="Bob", last_name="Smith", address="123 Main St", phone="123-456-7890",
+                                      email="seeker1@example.com", contact_pref="E", pet_number=2, has_children=False,
                                       experience="EX", residence_type="C", status="P", seeker=seeker1, shelter=shelter2, petlisting=petlisting2)
-    app3 = Application.objects.create(first_name="Jane", last_name="Doe", address="123 Main St", phone="123-456-7890",
+    app3 = Application.objects.create(first_name="Dan", last_name="Smith", address="123 Main St", phone="123-456-7890",
                                       email="seeker2@example.com", contact_pref="E", pet_number=2, has_children=False,
                                       experience="EX", residence_type="C", status="P", seeker=seeker2, shelter=shelter2, petlisting=petlisting2)
     
